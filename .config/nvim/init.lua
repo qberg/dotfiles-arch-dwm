@@ -556,6 +556,13 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
         --
+        elixirls = {
+          cmd = { vim.fn.expand '~/.bin/elixir-ls/language_server.sh' },
+        },
+        hls = {
+          filetypes = { 'haskell', 'lhaskell', 'cabal' },
+        },
+        jdtls = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -779,7 +786,7 @@ require('lazy').setup({
       workspaces = {
         {
           name = 'notes',
-          path = '~/vaults/Notes',
+          path = 'home/qberg/vaults',
         },
       },
 
@@ -829,7 +836,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
