@@ -1,0 +1,29 @@
+#!/bin/sh
+
+DMEDITOR="nvim"
+
+declare -a options=(
+"vim - $HOME/.vimrc"
+"st - $HOME/suckless/st/config.h"
+"dwm - $HOME/suckless/dwm/config.h"
+"bashrc - $HOME/.bashrc"
+"bash_alias - $HOME/.shell/aliases"
+"bash_func - $HOME/.shell/functions"
+"zshrc - $HOME/.zshrc"
+)
+
+SCRIPTS_DIR="$HOME/.local/bin/"
+SCRIPTS=$(ls "$SCRIPTS_DIR")
+
+choice=$(echo "$SCRIPTS" | dmenu -i -l 20 -p 'Edit scripts:')
+
+if [[ "$choice" == "quit" ]]; then
+	echo "Program terminated." && exit 1
+
+elif [ "$choice" ]; then
+	script="$SCRIPTS_DIR/$choice"
+	$DMEDITOR "$script"
+
+else
+	exit 1
+fi

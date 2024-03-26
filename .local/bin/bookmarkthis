@@ -1,0 +1,6 @@
+#!/bin/sh
+
+bookmark="$(xclip -o)"
+file="$HOME/.local/share/dmenu-files/snippets"
+
+echo "$bookmark" >> "$file"
