@@ -2,6 +2,12 @@
 alias c='clear'
 alias dgg='clear'
 
+alias e="nvim --"
+alias t="tmux"
+
+# Pacman
+alias p="pacman "
+
 # History commands
 alias h='history | grep '
 alias h1='history 10'
@@ -20,7 +26,7 @@ alias mv='mv -i'
 alias sb='source ~/.bashrc'
 
 # Search running processes
-alias p="ps aux | grep "
+alias proc="ps aux | grep "
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
 # Search files in the current folder
@@ -42,3 +48,35 @@ alias openports='netstat -nape --inet'
 alias diskspace="du -S | sort -n -r |more"
 alias folders='du -h --max-depth=1'
 alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+
+# Make a python calculator
+alias pycalc='python -ic "from __future__ import division; from math import *"'
+
+# Git aliases
+alias g='git '
+# add
+alias ga='git add'
+alias gaa='git add .'
+alias gaf='git add -f'
+# commit
+alias gc='git commit -v'
+alias gcm='git commit -v -m'
+
+# branch
+alias gb='git branch'
+alias gba='git branch --all'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
+alias gbl='git branch --list'
+alias gbla='git branch --list --all'
+alias gblr='git branch --list --remotes'
+alias gbm='git branch --move'
+alias gbr='git branch --remotes'
+alias gbt='git branch --track'
+alias gdel='git branch -D'
+
+# push
+alias gp='git push'
+alias gpo='git push -u origin master'
+alias gpd='git push --delete'
+alias gpf='git push --force'

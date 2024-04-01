@@ -72,3 +72,17 @@ function whatsmyip ()
 	# External IP Lookup
 	echo -n "External IP: " ; wget http://smart-ip.net/myip -O - -q
 }
+
+ht() {
+  echo "Top 10 your most commonly used commands:"
+  echo
+  history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10
+}
+
+function get_default_branch() {
+	if git branch | grep -q '^. main\s*$'; then
+		echo main
+	else
+		echo master
+	fi
+}
